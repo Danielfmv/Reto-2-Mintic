@@ -14,19 +14,18 @@ def nomina(informacion:dict) -> dict:
     
     if salarioBruto > 1500.00 and dineroextra <= 500.00:
         impuestos = round(((dineroextra * 20)/100),2)
+    elif salarioBruto > 1500.00 and dineroextra > 500.00:
+        impuestos = (((salarioBruto-2000)*30)/100) + ((500)*20)/100
     else:
-        if salarioBruto > 1500.00 and dineroextra > 500.00:
-            impuestos = round(((dineroextra * 30)/100),2)
-        else:
-            impuestos = 0
+        impuestos = 0
     
     salarioNeto = round((salarioBruto - impuestos),2)
 
     diccionarioSalida = dict()
     diccionarioSalida ["id"] = id
-    diccionarioSalida ["salarioBruto"] = float(salarioBruto)
+    diccionarioSalida ["salarioBruto"] = salarioBruto
     diccionarioSalida ["impuestos"] = impuestos
-    diccionarioSalida ["salarioNeto"] = float(salarioNeto)
+    diccionarioSalida ["salarioNeto"] = salarioNeto
 
     return diccionarioSalida
 
