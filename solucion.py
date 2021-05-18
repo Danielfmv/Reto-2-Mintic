@@ -31,3 +31,4 @@ def nomina(informacion:dict) -> dict:
     return diccionarioSalida
 
 informacion1 = {"id":1, "tarifa":40, "numeroHoras": 40}
+print(nomina(informacion1))
